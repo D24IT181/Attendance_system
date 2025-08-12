@@ -145,7 +145,7 @@ function TeacherDashboard() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="time_slot">Time Slot</Label>
-                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, time_slot: value})}>
+                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, time_slot: value})} value={takeAttendanceData.time_slot}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select time slot" />
                         </SelectTrigger>
