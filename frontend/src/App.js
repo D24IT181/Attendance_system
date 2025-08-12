@@ -801,6 +801,7 @@ function App() {
           <Route path="/teacher" element={<TeacherDashboard />} />
           <Route path="/student" element={<QRScanner />} />
           <Route path="/student/attendance" element={<StudentAttendance />} />
+          <Route path="*" element={<TeacherDashboard />} />
         </Routes>
       </div>
     </Router>
