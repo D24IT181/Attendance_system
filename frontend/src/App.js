@@ -163,7 +163,7 @@ function TeacherDashboard() {
 
                     <div className="space-y-2">
                       <Label htmlFor="lecture_or_lab">Type</Label>
-                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, lecture_or_lab: value})}>
+                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, lecture_or_lab: value})} value={takeAttendanceData.lecture_or_lab}>
                         <SelectTrigger>
                           <SelectValue placeholder="Lecture or Lab" />
                         </SelectTrigger>
