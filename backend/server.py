@@ -318,7 +318,7 @@ async def download_attendance(query: AttendanceQuery):
                 "Class": record.get("class_name", ""),
                 "Semester": record.get("semester", ""),
                 "Date": record.get("date", ""),
-                "Attendance Time": record.get("timestamp", "").replace("T", " ").split(".")[0] if record.get("timestamp") else ""
+                "Attendance Time": record.get("timestamp").isoformat().replace("T", " ").split(".")[0] if record.get("timestamp") else ""
             })
         
         # Create DataFrame and Excel file
