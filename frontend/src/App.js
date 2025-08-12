@@ -210,7 +210,7 @@ function TeacherDashboard() {
 
                     <div className="space-y-2">
                       <Label htmlFor="semester">Semester</Label>
-                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, semester: value})}>
+                      <Select onValueChange={(value) => setTakeAttendanceData({...takeAttendanceData, semester: value})} value={takeAttendanceData.semester}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select semester" />
                         </SelectTrigger>
