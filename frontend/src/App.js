@@ -747,46 +747,67 @@ function QRScanner() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Scan className="w-5 h-5 text-indigo-600" />
-            QR Code Scanner
-          </CardTitle>
-          <CardDescription>
-            Scan QR code or enter session ID manually
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="text-center space-y-6">
-            <div className="w-48 h-48 mx-auto bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-              <div className="text-center text-gray-500">
-                <Scan className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-sm">QR Scanner Area</p>
-                <p className="text-xs">(Demo Mode)</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2 flex items-center justify-center gap-3">
+            <Scan className="w-8 h-8 text-indigo-600" />
+            Student Portal
+          </h1>
+          <p className="text-lg text-gray-600">QR Code Scanner</p>
+        </div>
+        
+        <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Scan className="w-5 h-5 text-indigo-600" />
+              QR Code Scanner
+            </CardTitle>
+            <CardDescription>
+              Scan QR code or enter session ID manually
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="text-center space-y-6">
+              <div className="w-64 h-64 mx-auto bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center text-gray-500">
+                  <Scan className="w-16 h-16 mx-auto mb-2" />
+                  <p className="text-lg font-medium">QR Scanner Area</p>
+                  <p className="text-sm">(Demo Mode)</p>
+                </div>
+              </div>
+
+              <Separator />
+
+              <form onSubmit={handleManualEntry} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="session_id">Or Enter Session ID</Label>
+                  <Input
+                    id="session_id"
+                    value={manualSessionId}
+                    onChange={(e) => setManualSessionId(e.target.value)}
+                    placeholder="Enter session ID"
+                    className="text-center"
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700">
+                  Continue to Attendance
+                </Button>
+              </form>
+              
+              <div className="text-center">
+                <Button
+                  variant="outline"
+                  onClick={() => navigate('/')}
+                  className="text-sm"
+                >
+                  Back to Teacher Dashboard
+                </Button>
               </div>
             </div>
-
-            <Separator />
-
-            <form onSubmit={handleManualEntry} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="session_id">Or Enter Session ID</Label>
-                <Input
-                  id="session_id"
-                  value={manualSessionId}
-                  onChange={(e) => setManualSessionId(e.target.value)}
-                  placeholder="Enter session ID"
-                />
-              </div>
-              <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700">
-                Continue to Attendance
-              </Button>
-            </form>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
